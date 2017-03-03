@@ -1,0 +1,36 @@
+<h2>{{name}}</h2>
+<h3>{{email}}</h3>
+<h4>{{mobile}}</h4>
+<h4>{{address.street}}</h4>
+<form>
+  <label>Add Hobby :</label>
+  <input type="text" #hobby>
+  <button (click)="addHobby(hobby.value)">Add Hobby</button>
+</form>
+<div *ngIf="showHobbie">
+  <h4>Hobbies</h4>
+  <ul>
+    <li *ngFor="let da of hobbies">
+      {{da}}
+    </li>
+  </ul>
+</div>
+<button (click)="showHobbies()">{{showHobbie ? 'Hide Hobbies':'show Hobbies'}}</button>
+<hr />
+<h3>Edit User</h3>
+<form>
+  <label>Name: </label><br />
+  <input type="text" name="name" [(ngModel)]="name" /><br />
+  <label>Email: </label><br />
+  <input type="text" name="email" [(ngModel)]="email" /><br />
+  <label>Street: </label><br />
+  <input type="text" name="address.street" [(ngModel)]="address.street" /><br />
+  <label>City: </label><br />
+  <input type="text" name="address.city" [(ngModel)]="address.city" /><br />
+  <label>State: </label><br />
+  <input type="text" name="address.state" [(ngModel)]="address.state" /><br />
+  <br/>
+  <button (click)="adduser()">Add user</button>
+</form>
+<hr />
+
